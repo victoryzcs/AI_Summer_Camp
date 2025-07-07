@@ -64,17 +64,9 @@
         </section>
 
         <section>
-          <h2>Welcome & Icebreakers</h2>
+          <h2>Welcome!</h2>
           <ul>
             <li><strong>Instructor Intro:</strong> Victor & Prabhash.</li>
-            <li>
-              <strong>Student Activity:</strong> Name, favorite gadget, and one
-              tech invention they wish existed.
-            </li>
-            <li>
-              <strong>Team Activity:</strong> Build the tallest paper tower
-              using 5 sheets of paper and tape in 10 minutes.
-            </li>
             <li>
               <strong>Camp Rules:</strong> Ask questions 🌟, help each other 🤝,
               have fun 😄!
@@ -85,11 +77,10 @@
         <section>
           <h2>AI Camp Roadmap</h2>
           <ul>
-            <li><strong>Day 1:</strong> Intro to AI, Python, Raspberry Pi</li>
-            <li><strong>Day 2:</strong> Computer Vision</li>
+            <li><strong>Day 1:</strong> Foundations of Python & AI</li>
+            <li><strong>Day 2:</strong> Neural Networks & Computer Vision</li>
             <li>
-              <strong>Day 3:</strong> Introduce to Embedded AI: how AI works on
-              small devices
+              <strong>Day 3:</strong> Embedded AI: how AI works on small devices
             </li>
             <li><strong>Day 4:</strong> Final Showcase & Presentations</li>
           </ul>
@@ -99,61 +90,31 @@
           </p>
         </section>
 
+
         <section>
-          <h2>What is AI?</h2>
-          <ul>
-            <li>
-              <strong>Definition:</strong> Machines simulating human
-              intelligence: reasoning, learning, problem-solving.
-            </li>
-            <li>
-              <strong>Examples:</strong> ChatGPT 🧠, Netflix recommendations 🎥,
-              Tesla autopilot 🚗.
-            </li>
-            <li>
-              <strong>Types of AI:</strong> Rule-based, Machine Learning, Deep
-              Learning.
-            </li>
-            <li>
-              <strong>Mini Challenge:</strong> In groups, list 5 devices you use
-              that might use AI. Be ready to explain!
-            </li>
-          </ul>
+          <h2>What is Python?</h2>
+          <p>
+            Python is a <strong>powerful</strong>, <strong>easy-to-learn</strong> programming language. Just like human languages, it has its own syntax and rules. 
+            You ask your computer to do things by writing Python code, which it understands and executes.
+          </p>
         </section>
 
         <section>
-          <h2>Understanding Neural Networks</h2>
+          <h2><strong>What Can You Build with Python?</strong></h2>
           <ul>
-            <li>
-              <strong>Inspiration:</strong> Our brain! Neurons connect and fire
-              when we learn something new.
-            </li>
-            <li>
-              <strong>Structure:</strong> Input layer → Hidden layers → Output
-              layer
-            </li>
-            <li>
-              <strong>Analogy:</strong> Like baking a cake: ingredients (inputs)
-              → mixing (hidden layers) → final cake (output)
-            </li>
-            <li>
-              <strong>Use Case:</strong> Handwriting recognition, object
-              detection, voice translation
-            </li>
-            <li>
-              <strong>Visual:</strong> (Insert a diagram image with labeled
-              layers if possible)
-            </li>
+            <li><strong>Artificial Intelligence</strong> </li>
+            <li><strong>Websites & Apps</strong>  </li>
+            <li><strong>Games</strong></li>
+            <li><strong>Data Science</strong></li>
+            <li><strong>Automation</strong> </li>
           </ul>
         </section>
+
 
         <section>
           <h2>Python Basics for AI</h2>
           <ul>
-            <li>
-              <strong>Why Python?</strong> Simple, readable, powerful — perfect
-              for AI!
-            </li>
+
             <li>
               <strong>Variables:</strong> Store info — <code>age = 15</code>
             </li>
@@ -185,34 +146,155 @@
               two numbers
             </li>
             <li>
-              <strong>Challenge:</strong> Write a guessing game: computer picks
-              a number 1–10 and gives feedback
+              <strong>Challenge:</strong> Write a Rock, Paper, Scissors game:
+              get user input and generate a random computer choice to play
+              against
             </li>
           </ul>
         </section>
 
         <section>
-          <h2>🔍 Raspberry Pi AI Camera</h2>
+          <h2>Warm-up 1: Print Your Name and Emoji</h2>
+          <p>Use a loop to print your name followed by an emoji 5 times:</p>
+          <pre><code class="language-python">
+name = "Victor"  
+emoji = "😊"
+for _ in range(5):
+    print(name, emoji)
+    </code></pre>
+        </section>
+
+        <section>
+          <h2>Warm-up 2: Simple Calculator</h2>
+          <p>Build a calculator to add or subtract two numbers:</p>
+          <pre><code class="language-python">
+def calculator():
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+    operation = input("Enter operation (+ or -): ")
+    
+    if operation == '+':
+        result = num1 + num2
+    elif operation == '-':
+        result = num1 - num2
+    else:
+        return "Invalid operation"
+    
+    return f"The result is: {result}"
+
+print(calculator())
+    </code></pre>
+        </section>
+
+        <section>
+          <h2>🎮 Rock, Paper, Scissors Game</h2>
+          <p>Run the code below to play against the computer:</p>
+          <pre><code class="language-python">
+import random
+
+def get_computer_choice():
+    """Returns the computer's randomly chosen move"""
+    choices = ['rock', 'paper', 'scissors']
+    return random.choice(choices)
+
+def get_user_choice():
+    """Returns the user's move"""
+    while True:
+        user_choice = input("Enter rock, paper, or scissors: ")
+        if user_choice in ['rock', 'paper', 'scissors']:
+            return user_choice
+        else:
+            print("Invalid input! Try again.")
+
+def determine_winner(user_choice, computer_choice):
+    """Returns the winner"""
+    if user_choice == computer_choice:
+        return "Tie!"
+    elif (user_choice == 'rock' and computer_choice == 'scissors') or \
+         (user_choice == 'paper' and computer_choice == 'rock') or \
+         (user_choice == 'scissors' and computer_choice == 'paper'):
+        return "You win!"
+    else:
+        return "Computer wins!"
+
+def play_game():
+    """Plays the game"""
+    computer_choice = get_computer_choice()
+    user_choice = get_user_choice()
+    print("Computer chose:", computer_choice)
+    print(determine_winner(user_choice, computer_choice))
+
+play_game()
+          </code></pre>
+        </section>
+
+
+
+        <section>
+          <h2>What is AI?</h2>
+          <p>
+            Artificial Intelligence (AI) is about machines that can simulate
+            human intelligence. AI systems can:
+          </p>
+          <ul>
+            <li>Reason: draw logical conclusions</li>
+            <li>Learn: from data and improve</li>
+            <li>Problem-solve: find solutions to complex tasks</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Examples of AI</h2>
           <ul>
             <li>
-              <strong>What is Raspberry Pi?</strong> A tiny computer that runs
-              Python and connects to sensors/cameras.
+              <img
+                src="https://venturebeat.com/wp-content/uploads/2023/05/Untitled-design-78.png"
+                width="200"
+              />
+              ChatGPT (Reason)
             </li>
             <li>
-              <strong>Why it's cool:</strong> Makes real-world AI affordable and
-              accessible (like DIY smart devices!)
-            </li>
-
-            <li>
-              <strong>Behind the Scenes:</strong> A small neural network running
-              on the Pi identifies objects in a video feed.
+              <img
+                src="https://static1.srcdn.com/wordpress/wp-content/uploads/2023/10/netflix-logo-movies-tv-shows.jpg"
+                width="200"
+              />
+              Netflix (Learn)
             </li>
             <li>
-              <strong>Group Discussion:</strong> Where else could we use this?
-              (e.g., wildlife cams, smart homes, robots)
+              <img
+                src="https://cdn.motor1.com/images/mgl/P3JZAr/s3/fsd.jpg"
+                width="200"
+              />
+              Tesla Autopilot (Problem-solve)
             </li>
           </ul>
         </section>
+        <section>
+          <h2>What's the difference between AI, ML, and DL?</h2>
+                    <ul>
+            <li>
+              <strong>AI:</strong> Machines simulating human intelligence
+            </li>
+            <li>
+              <strong>ML (Machine Learning):</strong> AI that learns from data
+            </li>
+            <li>
+              <strong>DL (Deep Learning):</strong> ML using neural networks to
+              learn from raw data
+            </li>
+        </section>
+        <section>
+          <h2>Discussion</h2>
+
+          <p>
+            You might be using AI without realizing it! In groups, think of 2
+            Apps you use that might use AI. Be ready to explain!
+          </p>
+        </section>
+
+       
+
+
 
         <section>
           <h2>🎉 You Did It!</h2>
